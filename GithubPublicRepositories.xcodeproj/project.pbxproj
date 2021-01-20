@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4A3C4F2C222A3A98A9A22F20 /* Pods_GithubPublicRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB36EAF8C476926447295FD6 /* Pods_GithubPublicRepositories.framework */; };
+		A867FDC525B805E200EE1BF2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867FDC425B805E200EE1BF2 /* Coordinator.swift */; };
+		A867FDC825B805F000EE1BF2 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867FDC725B805F000EE1BF2 /* Presentable.swift */; };
+		A867FDCB25B805FF00EE1BF2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867FDCA25B805FF00EE1BF2 /* Router.swift */; };
+		A867FDCE25B8062200EE1BF2 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867FDCD25B8062200EE1BF2 /* BaseCoordinator.swift */; };
+		A867FDD125B8068500EE1BF2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867FDD025B8068500EE1BF2 /* AppCoordinator.swift */; };
+		A867FDD525B806C200EE1BF2 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867FDD425B806C200EE1BF2 /* CoordinatorFactory.swift */; };
 		A8F13C8825B8037B003DFA9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F13C8725B8037B003DFA9A /* AppDelegate.swift */; };
 		A8F13C8A25B8037B003DFA9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F13C8925B8037B003DFA9A /* SceneDelegate.swift */; };
 		A8F13C8C25B8037B003DFA9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F13C8B25B8037B003DFA9A /* ViewController.swift */; };
@@ -17,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A867FDC425B805E200EE1BF2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A867FDC725B805F000EE1BF2 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		A867FDCA25B805FF00EE1BF2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A867FDCD25B8062200EE1BF2 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		A867FDD025B8068500EE1BF2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A867FDD425B806C200EE1BF2 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		A8F13C8425B8037B003DFA9A /* GithubPublicRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubPublicRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F13C8725B8037B003DFA9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F13C8925B8037B003DFA9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +62,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A867FDC325B805BD00EE1BF2 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				A867FDD325B806B000EE1BF2 /* Factories */,
+				A867FDC425B805E200EE1BF2 /* Coordinator.swift */,
+				A867FDC725B805F000EE1BF2 /* Presentable.swift */,
+				A867FDCA25B805FF00EE1BF2 /* Router.swift */,
+				A867FDCD25B8062200EE1BF2 /* BaseCoordinator.swift */,
+				A867FDD025B8068500EE1BF2 /* AppCoordinator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		A867FDD325B806B000EE1BF2 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				A867FDD425B806C200EE1BF2 /* CoordinatorFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		A8F13C7B25B8037B003DFA9A = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +104,7 @@
 		A8F13C8625B8037B003DFA9A /* GithubPublicRepositories */ = {
 			isa = PBXGroup;
 			children = (
+				A867FDC325B805BD00EE1BF2 /* Routing */,
 				A8F13C8725B8037B003DFA9A /* AppDelegate.swift */,
 				A8F13C8925B8037B003DFA9A /* SceneDelegate.swift */,
 				A8F13C8B25B8037B003DFA9A /* ViewController.swift */,
@@ -88,7 +122,6 @@
 				C488305B88F5E7782C87A390 /* Pods-GithubPublicRepositories.debug.xcconfig */,
 				E0B3798B76D894825E369C75 /* Pods-GithubPublicRepositories.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,8 +239,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A867FDC525B805E200EE1BF2 /* Coordinator.swift in Sources */,
 				A8F13C8C25B8037B003DFA9A /* ViewController.swift in Sources */,
 				A8F13C8825B8037B003DFA9A /* AppDelegate.swift in Sources */,
+				A867FDC825B805F000EE1BF2 /* Presentable.swift in Sources */,
+				A867FDD125B8068500EE1BF2 /* AppCoordinator.swift in Sources */,
+				A867FDCE25B8062200EE1BF2 /* BaseCoordinator.swift in Sources */,
+				A867FDD525B806C200EE1BF2 /* CoordinatorFactory.swift in Sources */,
+				A867FDCB25B805FF00EE1BF2 /* Router.swift in Sources */,
 				A8F13C8A25B8037B003DFA9A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
