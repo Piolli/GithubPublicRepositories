@@ -24,7 +24,7 @@ struct RepositoryCellViewModel {
     }
     
     var description: String {
-        return "\(repository.description)"
+        return "\(repository.description ?? "")"
     }
     
 }
