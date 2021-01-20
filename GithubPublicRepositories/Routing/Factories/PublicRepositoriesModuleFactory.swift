@@ -9,5 +9,5 @@ import Foundation
 
 protocol PublicRepositoriesModuleFactory {
     func makePublicRepositoriesList() -> PublicRepositoriesListView
-    func makeRepositoryDetails() -> BaseView
+    func makeRepositoryDetails(url: URL) -> RepositoryDetailsView
 }

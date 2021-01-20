@@ -23,7 +23,11 @@ class ModuleFactoryImpl: PublicRepositoriesModuleFactory {
         return viewController
     }
     
-    func makeRepositoryDetails() -> BaseView {
-        fatalError()
+    func makeRepositoryDetails(url: URL) -> RepositoryDetailsView {
+        let viewModel = RepositoryDetailsViewModel(url: url)
+        let viewController = RepositoryDetailsViewController(viewModel: viewModel)
+        viewController.view.backgroundColor = .white
+        viewController.navigationItem.title = "Repository details"
+        return viewController
     }
 }

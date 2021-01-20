@@ -60,6 +60,13 @@ class PublicRepositoriesListViewController: UIViewController, PublicRepositories
         ])
         
         loadRepositoriesInput.accept(())
+        
+        Observable
+            .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(RepositoryCellViewModel.self))
+            .bind { [weak self] (indexPath, model) in
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+                self?.viewModel.onOpenDetails?(URL(string: model.repository.html_url)!)
+            }.disposed(by: disposeBag)
     }
     
     func setUpTableView() {

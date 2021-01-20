@@ -13,10 +13,12 @@ class PublicRepositoriesListCoordinator: BaseCoordinator, PublicRepositoriesList
     
     private let factory: PublicRepositoriesModuleFactory
     private let router: Router
+    private let coordinatorFactory: CoordinatorFactory
     
-    init(factory: PublicRepositoriesModuleFactory, router: Router) {
+    init(factory: PublicRepositoriesModuleFactory, router: Router, coordinatorFactory: CoordinatorFactory) {
         self.factory = factory
         self.router = router
+        self.coordinatorFactory = coordinatorFactory
     }
     
     override func start() {
@@ -32,7 +34,13 @@ class PublicRepositoriesListCoordinator: BaseCoordinator, PublicRepositoriesList
     }
     
     func showRepositoryDetails(url: URL) {
-        fatalError()
+        let coordinator = coordinatorFactory.makeRepositoryDetailsCoordinator(url: url)
+        coordinator.finishFlow = { [unowned self] in
+            self.router.dismissModule()
+            self.remove(coordinator: coordinator)
+        }
+        add(coordinator: coordinator)
+        coordinator.start()
     }
     
 }
