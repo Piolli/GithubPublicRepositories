@@ -13,8 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private var rootViewController = UINavigationController()
     private lazy var router = RouterImpl(rootViewController: rootViewController)
+    private var assembler = Assembler.shared
     private lazy var appCoordinator: Coordinator = {
-        return AppCoordinator(router: router, coordinatorFactory: CoordnatorFactoryImpl(router: router))
+        return AppCoordinator(router: router, coordinatorFactory: CoordnatorFactoryImpl(router: router, assembler: assembler))
     }()
 
     @available(iOS 13, *)

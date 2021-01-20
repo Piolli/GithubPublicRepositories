@@ -14,13 +14,15 @@ protocol CoordinatorFactory {
 class CoordnatorFactoryImpl: CoordinatorFactory {
     
     unowned let router: Router
+    let assembler: Assembler
     
-    init(router: Router) {
+    init(router: Router, assembler: Assembler) {
         self.router = router
+        self.assembler = assembler
     }
     
     func makePublicRepositoriesListCoordinator() -> Coordinator & PublicRepositoriesListOutput {
-        return PublicRepositoriesListCoordinator(factory: ModuleFactoryImpl(), router: router)
+        return PublicRepositoriesListCoordinator(factory: ModuleFactoryImpl(assembler: assembler), router: router)
     }
 }
 
