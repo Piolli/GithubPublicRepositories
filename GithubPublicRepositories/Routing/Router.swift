@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol Router: Presentable {
+protocol Router: Presentable, AnyObject {
     
     func push(_ view: Presentable)
     func push(_ view: Presentable, animated: Bool)

@@ -11,3 +11,9 @@ import UIKit
 protocol Presentable {
     func asPresent() -> UIViewController
 }
+
+extension UIViewController: Presentable {
+    func asPresent() -> UIViewController {
+        return self
+    }
+}
