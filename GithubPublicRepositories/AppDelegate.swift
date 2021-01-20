@@ -12,8 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    private var rootViewController = UINavigationController()
     private lazy var router = RouterImpl(rootViewController: rootViewController)
+    private var rootViewController = UINavigationController()
     private var assembler = Assembler.shared
     
     private lazy var appCoordinator: Coordinator = {

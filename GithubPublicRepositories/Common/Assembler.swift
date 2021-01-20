@@ -8,8 +8,8 @@
 import Foundation
 
 class Assembler:
-//    PublicRepositoryLoaderAssembler
-    StubPublicRepositoryLoaderAssembler
+    PublicRepositoryLoaderAssembler
+//    StubPublicRepositoryLoaderAssembler
 {
 
     public static let shared = Assembler()
