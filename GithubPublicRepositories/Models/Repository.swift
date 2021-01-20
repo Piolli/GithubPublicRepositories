@@ -11,7 +11,7 @@ struct Repository: Decodable {
     let owner: Owner
     let id: Int
     let name: String
-    let description: String
+    let description: String?
 }
 
 struct Owner: Decodable {
